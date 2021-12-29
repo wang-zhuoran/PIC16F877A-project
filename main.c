@@ -63,7 +63,7 @@ unsigned char gOutString[16];
 int i = 0;
 char ch = 0;
 int col = 16;
-int flag = 1; //?????????
+int flag = 1; 
 
 void main()
 {
@@ -148,19 +148,17 @@ void setup(void) // setup stuff
 
 void loop(void)
 {
-        //????????
+        
         if (value1 > thr)
         {
             T1CON = 0x01;
-            //send_str("Fast Mode");
-            //LCDTitle();
+            
 
         }
         else if (value1 <= thr)
         {
             T1CON = 0x31;
-            //LCDTitle();
-            //send_str("Normal Mode");
+            
 
         }
 }
@@ -214,16 +212,13 @@ void send_str(char *str)
 //Display title on LCD
 void LCDTitle(void)
 {
-    //int row = 1, col = 16;
-    //??????????. ???16?
     if (col < 0)
     {
         col = 16;
     }
     Lcd8_Clear();
     Lcd8_Set_Cursor(2, col);    // select line 2 of LCD
-    Lcd8_Write_String("Hello"); // display "EE302" on second line of LCD
-    //col--;
+    Lcd8_Write_String("Hello"); // display "Hello" on second line of LCD
     __delay_ms(300);
 }
 
@@ -231,7 +226,6 @@ void LCDTitle(void)
 void readLDR_value(void){
     if(1){
         __delay_ms(150);
-        //while(1){
             __delay_us(50);
             GO_nDONE = 1;
             while(GO_nDONE){
@@ -248,7 +242,6 @@ void readLDR_value(void){
             new_value = ad_value;
            __delay_ms(100);
         }
-    //}
 }
 
 void Write_data(void)
